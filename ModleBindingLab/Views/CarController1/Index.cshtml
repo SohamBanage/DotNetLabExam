@@ -1,0 +1,65 @@
+﻿@model IEnumerable<ModleBindingLab.Models.Car>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.CarId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Bhp)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CC)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fueltank)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FuelEconomy)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.CarId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Bhp)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CC)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Fueltank)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FuelEconomy)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new {  id=item.CarId  }) |
+                @Html.ActionLink("Details", "Details", new {  id=item.CarId }) |
+                @Html.ActionLink("Delete", "Delete", new {  id=item.CarId  })
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
